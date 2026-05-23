@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#16a34a" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#16a34a" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f4f5"/>
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#e5e5e5" stroke-width="0.6"/>
+    </pattern>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.2" r="0.9" fill="#d4d4d4"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)" opacity="0.9"/>
+  <rect width="1600" height="900" fill="url(#dots)" opacity="0.55"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Isometric wireframe cubes -->
+  <g fill="none" stroke="#15803d" stroke-opacity="0.55" stroke-width="1.1" stroke-linejoin="round">
+    <g transform="translate(1080 220)">
+      <path d="M0 0 L180 -90 L360 0 L360 200 L180 290 L0 200 Z"/>
+      <path d="M0 0 L180 90 L360 0"/>
+      <path d="M180 90 L180 290"/>
+    </g>
+    <g transform="translate(1240 540)" stroke-opacity="0.32">
+      <path d="M0 0 L110 -55 L220 0 L220 120 L110 175 L0 120 Z"/>
+      <path d="M0 0 L110 55 L220 0"/>
+      <path d="M110 55 L110 175"/>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#16a34a" stroke-opacity="0.22" stroke-width="0.9">
+    <path d="M0 720 L460 540 L760 660 L1180 480 L1600 600"/>
+    <path d="M0 800 L460 620 L760 740 L1180 560 L1600 680"/>
+  </g>
+
+  <!-- Crosshair accents -->
+  <g stroke="#15803d" stroke-opacity="0.55" stroke-width="1">
+    <line x1="120" y1="120" x2="160" y2="120"/>
+    <line x1="140" y1="100" x2="140" y2="140"/>
+    <circle cx="140" cy="120" r="6" fill="none" stroke-opacity="0.7"/>
+  </g>
+</svg>

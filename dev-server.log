@@ -1,0 +1,64 @@
+﻿
+> print-box@0.1.0 dev
+> cross-env NODE_OPTIONS=--no-deprecation next dev
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.100.160:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 2.9s (882 modules)
+[⣷] Pulling schema from database...
+[2K[1G[⣯] Pulling schema from database...
+[2K[1G[⣟] Pulling schema from database...
+[2K[1G[⡿] Pulling schema from database...
+[2K[1G[⢿] Pulling schema from database...
+[2K[1G[✓] Pulling schema from database...
+[12:21:31] [33mWARN[39m: [36mNo email adapter provided. Email will be written to console. More info at https://payloadcms.com/docs/email/overview.[39m
+[12:21:31] [32mINFO[39m: [36m[seed] Header navItems seeded[39m
+[12:21:31] [32mINFO[39m: [36m[seed] About global seeded[39m
+[12:21:31] [32mINFO[39m: [36m[seed] Seeded 4 posts[39m
+[12:21:31] [32mINFO[39m: [36m[seed] Seeded 6 products[39m
+[12:21:31] [32mINFO[39m: [36m[seed] Seeded 4 models[39m
+ GET / 200 in 8699ms
+ GET / 200 in 400ms
+ ○ Compiling /publicaciones ...
+ ✓ Compiled /publicaciones in 1106ms (887 modules)
+Generating import map
+No new imports found, skipping writing import map
+ GET /publicaciones 200 in 1781ms
+ ✓ Compiled /proyectos in 394ms (878 modules)
+ GET /proyectos 200 in 727ms
+ ✓ Compiled /productos in 461ms (880 modules)
+ GET /productos 200 in 863ms
+ ✓ Compiled /acerca-de in 461ms (882 modules)
+ GET /acerca-de 200 in 949ms
+ ○ Compiling /cotizar ...
+ ✓ Compiled /cotizar in 807ms (890 modules)
+ GET /cotizar 200 in 1224ms
+ ○ Compiling /admin/[[...segments]] ...
+ ✓ Compiled /admin/[[...segments]] in 6.3s (3393 modules)
+ GET /admin 200 in 26605ms
+ GET /admin/collections/posts 200 in 163ms
+ GET /admin/collections/products 200 in 168ms
+ GET /admin/globals/header 200 in 151ms
+ GET /admin/globals/about 200 in 160ms
+ GET /publicaciones 200 in 225ms
+ GET /productos 200 in 174ms
+ GET /admin/collections/users 200 in 339ms
+ GET /admin/collections/media 200 in 179ms
+ ○ Compiling /api/[...slug] ...
+ ✓ Compiled /api/[...slug] in 3.3s (3379 modules)
+Generating import map
+No new imports found, skipping writing import map
+ GET /admin/collections/pages 200 in 9977ms
+ GET /api/media/file/Gemini_Generated_Image_5l84yb5l84yb5l84-removebg-preview.png?2026-05-22T16%3A08%3A52.136Z 200 in 15036ms
+ GET /api/media/file/Screenshot%202026-05-21%20222435.png?2026-05-22T15%3A46%3A50.960Z 200 in 15050ms
+ GET /admin/globals/about 200 in 368ms
+ GET /api/payload-preferences/global-about 200 in 73ms
+ POST /api/payload-preferences/global-about 200 in 77ms
+ GET /admin/globals/header 200 in 234ms
+ GET /api/payload-preferences/global-header 200 in 41ms
