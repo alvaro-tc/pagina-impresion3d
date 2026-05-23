@@ -3,10 +3,16 @@ name: Deploy to Production
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Deploy via SSH
@@ -15,13 +21,41 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          command_timeout: 20m
           script: |
-            cd ${{ secrets.SERVER_PATH }}
+            set -euo pipefail
 
-            git pull origin main
+            cd "${{ secrets.SERVER_PATH }}"
 
-            docker compose up -d --build --no-deps app
+            echo "==> Pulling latest changes"
+            git fetch --all --prune
+            git reset --hard origin/main
 
+            cd print-box
+
+            if [ ! -f .env ]; then
+              echo "ERROR: print-box/.env not found on the server. Aborting."
+              exit 1
+            fi
+
+            echo "==> Building and starting containers"
+            docker compose pull db || true
+            docker compose up -d --build --remove-orphans
+
+            echo "==> Pruning dangling images"
             docker image prune -f
 
-            docker compose ps app
+            echo "==> Waiting for app to be healthy"
+            for i in $(seq 1 30); do
+              if curl -fsS -o /dev/null -m 5 http://127.0.0.1:3000; then
+                echo "App responding on :3000"
+                exit 0
+              fi
+              echo "  attempt $i/30 — waiting 5s"
+              sleep 5
+            done
+
+            echo "ERROR: App did not respond on :3000 after 150s. Last logs:"
+            docker compose logs --tail=80 app
+            exit 1
