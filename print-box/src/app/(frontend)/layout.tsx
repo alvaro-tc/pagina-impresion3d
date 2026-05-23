@@ -92,6 +92,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="es" className={inter.variable} suppressHydrationWarning>
       <head>
+        <meta name="facebook-domain-verification" content="9napzuv6zepk6k4vih4zhpk25q84ch" />
         <ThemeScript />
       </head>
       <body suppressHydrationWarning>
