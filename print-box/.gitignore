@@ -42,6 +42,9 @@ next-env.d.ts
 
 /media
 
+# Local Docker overrides
+docker-compose.override.yml
+
 # Playwright
 node_modules/
 /test-results/
