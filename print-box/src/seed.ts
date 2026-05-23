@@ -1,4 +1,9 @@
 import type { Payload } from 'payload'
+import type { Post, Product, Models3D } from './payload-types'
+
+type PostSeed = Pick<Post, 'title' | 'slug' | 'category' | 'excerpt' | 'readTime'>
+type ProductSeed = Pick<Product, 'name' | 'slug' | 'category' | 'price' | 'stock' | 'materials'>
+type ModelSeed = Pick<Models3D, 'title' | 'designer' | 'software'>
 
 const NAV_DEFAULT = [
   { label: 'Inicio', href: '/' },
@@ -9,7 +14,7 @@ const NAV_DEFAULT = [
   { label: 'Cotizar', href: '/cotizar' },
 ]
 
-const POSTS_DEFAULT = [
+const POSTS_DEFAULT: PostSeed[] = [
   {
     title: 'Impresión 3D en El Alto: por qué Bolivia es un mercado en crecimiento',
     slug: 'impresion-3d-en-el-alto',
@@ -44,7 +49,7 @@ const POSTS_DEFAULT = [
   },
 ]
 
-const PRODUCTS_DEFAULT = [
+const PRODUCTS_DEFAULT: ProductSeed[] = [
   { name: 'Cholita Paceña — Edición coleccionista', slug: 'cholita-pacena-coleccion', category: 'figuras', price: 220, stock: 8, materials: ['Resina'] },
   { name: 'Ekeko miniatura — souvenir', slug: 'ekeko-mini', category: 'figuras', price: 70, stock: 25, materials: ['PLA'] },
   { name: 'Llavero Wiphala', slug: 'llavero-wiphala', category: 'accesorios', price: 25, stock: 60, materials: ['PLA', 'PETG'] },
@@ -53,7 +58,7 @@ const PRODUCTS_DEFAULT = [
   { name: 'Lámpara Voronoi — luz cálida', slug: 'lampara-voronoi', category: 'decoración', price: 180, stock: 10, materials: ['PLA'] },
 ]
 
-const MODELS_DEFAULT = [
+const MODELS_DEFAULT: ModelSeed[] = [
   { title: 'Maqueta institucional — Teleférico La Paz–El Alto', designer: 'PRINT BOX Studio', software: ['Blender', 'Fusion 360'] },
   { title: 'Réplica Puerta del Sol (Tiwanaku)', designer: 'PRINT BOX Studio', software: ['Blender'] },
   { title: 'Prototipo carcasa IoT agroindustrial', designer: 'PRINT BOX Studio', software: ['Fusion 360'] },
